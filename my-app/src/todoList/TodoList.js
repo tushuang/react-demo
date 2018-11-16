@@ -32,7 +32,7 @@ class TodoList extends Component  {
                 <h1 className="text-center"> ToDoList—最简单的待办事项列表 </h1>
 
                 <input onKeyUp = {this.addTodo} type="text" className="form-control"/>
-                {/*  定义一个value */}
+                {/*  定义一个value value = 一个对象 */}
                 <Provider value =   
                 {{deleteTodo : this.deleteTodo,
                 changeFinished : this.changeFinished,

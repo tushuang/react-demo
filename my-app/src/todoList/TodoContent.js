@@ -25,7 +25,10 @@ class TodoContent extends Component {
         return this.props.todos.map(item => <Consumer key={item.id}>
                                             {(value) => 
                                             <TodoItem 
-                                            {...value}
+                                            // {...value}
+                                            deleteTodo = {value.deleteTodo}
+                                            changeFinished = {value.changeFinished}
+                                            changeTitle = {value.changeTitle}
                                             todo = {item} 
                                             // deleteTodo = {this.props.deleteTodo}
                                             // changeFinished = {this.props.changeFinished}
