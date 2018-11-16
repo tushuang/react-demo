@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TodoContent from './TodoContent' 
-
+import {Provider} from '../context'
 
 // 定义一条数据 来渲染子组件
 // 数据最好写在construct里
@@ -32,7 +32,14 @@ class TodoList extends Component  {
                 <h1 className="text-center"> ToDoList—最简单的待办事项列表 </h1>
 
                 <input onKeyUp = {this.addTodo} type="text" className="form-control"/>
-                {this.renderChild()}
+                {/*  定义一个value */}
+                <Provider value =   
+                {{deleteTodo : this.deleteTodo,
+                changeFinished : this.changeFinished,
+                changeTitle : this.changeTitle}}>
+                    {this.renderChild()}
+                </Provider>
+                
             </div>
         )
     }
@@ -45,11 +52,10 @@ class TodoList extends Component  {
             return <TodoContent 
             // 每次遍历时传入不同的type从而得到不同状态的todo 并且根据不同状态的todo来渲染标题
                     todos = {this.correctTodos(item.type)}
-                    deleteTodo = {this.deleteTodo}
-                    // title = {this.updateTitle}
+                    // deleteTodo = {this.deleteTodo}
                     type = {item} key = {item.id}
-                    changeFinished = {this.changeFinished}
-                    changeTitle = {this.changeTitle}
+                    // changeFinished = {this.changeFinished}
+                    // changeTitle = {this.changeTitle}
                     />
         })
         
