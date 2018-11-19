@@ -23,7 +23,7 @@ const  DataSource = {
         this.handlders.push(hander)
     },
     removeEventListen(hander){
-        this.handlders = this.handlders.filter(item=>item!=hander)
+        this.handlders = this.handlders.filter(item=>item!==hander)
     },
     addComment(){
         console.log(this)

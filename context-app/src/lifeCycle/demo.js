@@ -27,6 +27,7 @@ class Son extends PureComponent {
         console.log('Child DidMount')
     }
     componentWillReceiveProps(props,state){
+        // this.forceUpdate()
         if ( props.color === this.props.color ) return false;
         console.log(props,state)  // 我觉得第一层是可以改的 state里再有对象的话就不能改了 只能整体替换 
         this.setState((pre)=>{
@@ -85,6 +86,7 @@ class Father extends Component {
                 <button onClick = {this.changeColor.bind(null,'black')}>blcak</button>
                 <button onClick = {this.changeColor.bind(null,'pink')}>pink</button>
                 <button onClick = {this.changeColor.bind(null,'black')}>blcak</button>
+                <button onClick = {this.changeColor.bind(null,'yellow')}>yellow</button>
                 {console.log('Father render()')}
                 {this.state.color !== 'black'  &&<Son color = {this.state.color}/>}
             </> 

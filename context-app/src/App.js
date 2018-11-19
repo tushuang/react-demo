@@ -6,7 +6,7 @@ import './App.css';
 // import Context from './context/demo'
 import HocDemo from './HOC/HocDemo'
 import CommentList from './HOC/CommentList'
-import Father from './lifeCycle/demo'
+import Father from './lifeCycle/forceUpdate'
 
 class App extends Component {
   render() {
